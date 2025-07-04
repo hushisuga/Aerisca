@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Behind the vibe</title>
+   
+        <!--icon-->
+        <link rel="icon" href="./image/floral_core/icon.jpeg" type="image/png" />
+    <!--font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amarante&family=Oi&display=swap"
+      rel="stylesheet"
+    />
+    <!--style-->
+    <style>
+      :root {
+        font-size: 16px;
+      }
+      *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        /*background-color: #111;*/
+        color: white;
+
+        background-image: url(./image/login_page/sec7_back.jpg);
+        background-position: center;
+        background-attachment: fixed;
+        background-size: cover;
+        background-repeat: no-repeat;
+       backdrop-filter: blur(10px);
+      
+      }
+      .container {
+        display: flex;
+        align-items: flex-start;
+        margin: 2rem;
+        position: relative;
+      }
+         /* for the scroll animaltions*/
+         .scroll-content {
+        opacity: 0;
+        transform: translateY(3.125rem);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+
+      .scroll-content.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      /* Vertical curvy timeline using SVG */
+      #curvy-svg {
+        position: absolute;
+        left: 4rem;
+        top: 0;
+        width: 4rem;
+        height: 100%;
+        overflow: visible;
+        pointer-events: none;
+        z-index: -1;
+      }
+      .content {
+        flex: 1;
+        margin-left: 6rem;
+      }
+      .block {
+        position: relative;
+        padding-left: 3rem;
+        margin-bottom: 10rem;
+        opacity: 0.3;
+        transition: opacity 0.6s ease;
+      }
+      .block.visible {
+        opacity: 1;
+      }
+      .dot {
+        position: absolute;
+        left: -1.5rem;
+        top: 0.5rem;
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        background-color: #3333339d;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        z-index: 1;
+      }
+      .dot.active {
+        background-color: white;
+        transform: scale(1.3);
+      }
+
+      /* heading*/
+      .content h1 {
+        font-family: "Amarante", serif;
+        text-transform: uppercase;
+        letter-spacing: 0.5rem;
+        font-size: 3.5rem;
+        margin-bottom: 4rem;
+        font-weight: 100;
+      }
+      .content-text {
+        width: 80%;
+      }
+      .content-text h3{
+       font-size: 1.5rem;
+        letter-spacing: 0.1rem;
+      }
+      .content-text ul{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .span{
+        font-size: 1.5rem;
+        padding-top: 2rem;
+        color: rgb(207, 207, 207);
+        
+      }
+
+      #block2 ul .text{
+        margin-bottom: 2rem;
+      }
+      #block2 ul .text2{
+        margin-top: 2rem;
+      }
+
+      #block3 .text3{
+        list-style-type: none;
+        padding-left: 0rem;
+        margin: 1rem 0 2rem 0;
+      }
+      #block3 .text3 li{
+        margin-bottom: 0.5rem;
+      }
+
+      /* common*/
+      .marg-bottom{
+        margin-bottom: 1rem;
+      }
+      .marg-up{
+        margin-top: 1rem;
+      }
+
+      .content-text button{
+        padding: 0.5rem 1rem 0.5rem 1rem;
+        margin:2rem 0 0 0 ;
+        text-align: center;
+        text-transform: capitalize;
+        border: none;
+        border-radius: 20px;
+      }
+      .content-text button:hover{
+        background-color: rgb(188, 186, 186);
+        color: black;
+        transform: scale(1.1);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Curvy SVG Timeline -->
+      <svg id="curvy-svg" xmlns="http://www.w3.org/2000/svg">
+        <path id="timeline-path" fill="none" stroke="gray" stroke-width="2" />
+      </svg>
+    
+      <div class="content">
+        <h1 class="scroll-content">Behind the Vibe</h1>
+    
+        <div class="block" id="block1">
+          <div class="dot"></div>
+          <div class="content-text ">
+            <ul>
+              <li><h3>Hey there!</h3></li>
+              <li>Welcome to Behind the Vibe –</li>
+              <li>
+                the space where this entire idea was born, built, and brought to life
+                (by yourstruly — solo girl squad 💅).
+              </li>
+              <br />
+              <li>This isn’t just another fashion website.</li>
+              <li>
+                It’s a mood-based fashion experience where style meets
+                self-expression, and every page is curated to match a vibe, not just
+                a clothing rack.
+              </li>
+            </ul>
+          </div>
+        </div>
+    
+        <div class="block" id="block2">
+          <div class="dot"></div>
+          <div class="content-text">
+            <ul>
+              <li><h3>Why This?</h3></li>
+              <li class="text"><em>Because let’s be honest — we dress based on how we feel.🎀</em></li>
+              <li>Some days it's chill girl energy,</li>
+              <li>some days it’s CEO bossmode,</li>
+              <li>and some days we’re ready to float in florals like a main character</li>
+              <li class="text2">
+                So instead of boring categories like "tops" or "dresses," <br />
+                I asked a better question: </li>
+                <li class="span">What kind of vibe are you today?
+              </li>
+            </ul>
+          </div>
+        </div>
+    
+        <div class="block" id="block3">
+          <div class="dot"></div>
+          <div class="content-text">
+            <ul>
+              <li><h3>What’s Inside?</h3></li>
+              <li>
+                On the landing page, you’ll choose from six bold, beautiful cores:
+                <ul class="text3">
+                  <li>👟 Casual Core – effortless, cozy, but make it cute</li>
+                  <li>🌼 Floral Core – dreamy, trendy, garden fairy moments </li>
+                  <li>👠 Elegance Core – gowns, glam, and everything divine</li>
+                  <li>🦢Timeless Traditionals – bridal + desi vibes with a glow-up</li>
+                  <li>🌟 Old Money – classic, vintage, giving "rich and unbothered"</li>
+                  <li>💻 Corporate Slay – power fits for powerful women</li>
+                </ul>
+              </li>
+              <li class="marg-up">
+                Each core has its own unique theme, layout, and aesthetic because
+                just like us —<em>one vibe doesn’t fit all ✨</em>
+              </li>
+              <li class="marg-up">It’s intentional — I
+                wanted each vibe to feel like a mini world of its own 💫</li>
+
+              <li class="marg-up">
+                Some cores talk about fashion tips, inspo, and how to slay that style,
+                while others drop you straight into the visuals and say:
+               <li class="span"> Feel this energy. This is you today.</li>
+                
+              </li>
+             
+            </ul>
+          </div>
+        </div>
+    
+        <div class="block" id="block4">
+          <div class="dot"></div>
+          <div class="content-text">
+
+            <ul>
+              <li><h3> More Than Just Looks</h3></li>
+              <li>At the end of your vibe journey, you’ll find the option to shop your
+                core 🛒</li>
+              <li class="marg-up">Register, choose the outfit that speaks to your soul, and wear
+                your mood with pride 💃</li>
+              <li class="marg-up marg-bottom">It’s not just about buying clothes.</li>
+              <li>It’s
+                about finding your energy, owning it, and letting fashion be your
+                loudest love language 💌</li>
+            </ul>
+          </div>
+        </div>
+    
+        <div class="block" id="block5">
+          <div class="dot"></div>
+          <div class="content-text">
+            <ul>
+              <li><h3>Wanna Hype It or Drop Feedback?</h3></li>
+              <li> If you vibed with this site, found your core, or just wanna send some
+                love (or feedback 💌),</li>
+              <li class="marg-up"> drop your thoughts below-</li>
+              <li class="marg-up marg-bottom"> I'd love to hear from
+                  you! This entire vibe-check experience is a part of my college project,
+                  built solo with all heart, hustle, and a whole lot of style ✨💅
+              </li><li> So go
+                  ahead — let me know what you think! 💬</li>
+                  <li><button onclick="openGmail()">Your Thoughts?</button></li>
+            </ul>
+          </div>
+        </div>
+    
+      </div>
+    </div>
+    
+    <script>
+      const blocks = document.querySelectorAll(".block");
+      const pathEl = document.getElementById("timeline-path");
+      const svg = document.getElementById("curvy-svg");
+
+      function updateTimeline() {
+        const positions = [];
+        blocks.forEach((block) => {
+          const dot = block.querySelector(".dot");
+          const rect = dot.getBoundingClientRect();
+          // y position relative to container top + scroll
+          const containerRect = document
+            .querySelector(".container")
+            .getBoundingClientRect();
+          const y = rect.top - containerRect.top + dot.offsetHeight / 2;
+          positions.push(y);
+        });
+
+        // set svg height to content height
+        svg.setAttribute(
+          "height",
+          document.querySelector(".content").scrollHeight + 50
+        );
+
+        // build curvy path
+        if (positions.length) {
+          let d = `M 20 ${positions[0]}`;
+          for (let i = 1; i < positions.length; i++) {
+            const mid = (positions[i - 1] + positions[i]) / 2;
+            // cubic Bezier: C x1,y1 x2,y2 x,y
+            d += ` C 40 ${mid}, 0 ${mid}, 20 ${positions[i]}`;
+          }
+          pathEl.setAttribute("d", d);
+        }
+      }
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            const dot = entry.target.querySelector(".dot");
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              dot.classList.add("active");
+            } else {
+              entry.target.classList.remove("visible");
+              dot.classList.remove("active");
+            }
+          });
+        },
+        { threshold: 0.6 }
+      );
+
+      blocks.forEach((block) => observer.observe(block));
+      window.addEventListener("scroll", updateTimeline);
+      window.addEventListener("resize", updateTimeline);
+      window.addEventListener("load", updateTimeline);
+
+
+      //for the scroll
+
+      //for the transition of different text
+      document.addEventListener("DOMContentLoaded", function () {
+        const classNames = [
+          ".scroll-content"
+        ];
+
+        function checkScroll() {
+          classNames.forEach((selector) => {
+            document.querySelectorAll(selector).forEach((el) => {
+              const rect = el.getBoundingClientRect();
+              if (rect.top < window.innerHeight - 100) {
+                el.classList.add("visible");
+              } else {
+                el.classList.remove("visible");
+              }
+            });
+          });
+        }
+
+        window.addEventListener("scroll", checkScroll);
+        checkScroll();
+      });
+
+      //for the button reaction gmail : newtripti925@gmail.com
+      function openGmail() {
+    //window.open("https://mail.google.com/mail/?view=cm&fs=1&to=newtripti925@gmail.com&su=Hello&body=I+love+your+website", "_blank");
+    window.open("https://mail.google.com/mail/?view=cm&fs=1&to=newtripti925@gmail.com&su=FeedBack", "_blank");
+  }
+    </script>
+  </body>
+</html>

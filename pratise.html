@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Page</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        padding: 2rem;
+        background: #f0f0f0;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      .shop {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 2rem;
+      }
+
+      .item {
+        background: #fff;
+        padding: 1rem;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      .item h3 {
+        margin-bottom: 0.5rem;
+      }
+
+      .item button {
+        margin-top: 0.5rem;
+        padding: 0.5rem 1rem;
+        background: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .cart {
+        margin-top: 3rem;
+        background: #fff;
+        padding: 1.5rem;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .cart h2 {
+        margin-bottom: 1rem;
+      }
+
+      .cart-items {
+        list-style: none;
+        margin-bottom: 1rem;
+      }
+
+      .cart-items li {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.5rem;
+      }
+
+      .cart-items button {
+        background: red;
+        color: white;
+        border: none;
+        padding: 0.2rem 0.6rem;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .total {
+        font-weight: bold;
+        margin-top: 1rem;
+      }
+
+      .buy-btn {
+        margin-top: 1rem;
+        background: green;
+        color: white;
+        padding: 0.6rem 1.2rem;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>🛍️ Shopping Page</h1>
+    <div class="shop" id="shop">
+      <div class="item">
+        <h3>Classic Tee</h3>
+        <p>$25</p>
+        <button onclick="addToCart('Classic Tee', 25)">Add to Cart</button>
+      </div>
+      <div class="item">
+        <h3>Denim Jacket</h3>
+        <p>$60</p>
+        <button onclick="addToCart('Denim Jacket', 60)">Add to Cart</button>
+      </div>
+      <div class="item">
+        <h3>Running Shoes</h3>
+        <p>$80</p>
+        <button onclick="addToCart('Running Shoes', 80)">Add to Cart</button>
+      </div>
+      <div class="item">
+        <h3>Stylish Hat</h3>
+        <p>$20</p>
+        <button onclick="addToCart('Stylish Hat', 20)">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="cart">
+      <h2>🛒 Your Cart</h2>
+      <ul class="cart-items" id="cart-items"></ul>
+      <p class="total">Total: $<span id="total">0</span></p>
+      <button class="buy-btn" onclick="buyNow()">Buy Now</button>
+    </div>
+
+    <script>
+      const cart = [];
+
+      function addToCart(name, price) {
+        cart.push({ name, price });
+        renderCart();
+      }
+
+      function removeFromCart(index) {
+        cart.splice(index, 1);
+        renderCart();
+      }
+
+      function renderCart() {
+        const cartItems = document.getElementById("cart-items");
+        const total = document.getElementById("total");
+
+        cartItems.innerHTML = "";
+        let sum = 0;
+
+        cart.forEach((item, index) => {
+          sum += item.price;
+          const li = document.createElement("li");
+          li.innerHTML = `${item.name} - $${item.price} <button onclick="removeFromCart(${index})">x</button>`;
+          cartItems.appendChild(li);
+        });
+
+        total.textContent = sum;
+      }
+
+      function buyNow() {
+        if (cart.length === 0) {
+          alert("Your cart is empty!");
+          return;
+        }
+        alert("Thanks for your purchase! 🎉");
+        cart.length = 0;
+        renderCart();
+      }
+    </script>
+  </body>
+</html>

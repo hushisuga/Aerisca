@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Casual Core</title>
+    <!--icon-->
+    <link rel="icon" href="./image/glasses.png" />
+    <style>
+      /* scroll animation*/
+
+      /* Common animation class */
+      .scroll-animate {
+        opacity: 0;
+        transform: translateY(3rem);
+        transition: all 0.5s ease-out;
+      }
+
+      .scroll-animate.visible {
+        opacity: 1;
+        transform: translateY(-3rem);
+      }
+
+      /* Image from top */
+      .image-animate {
+        opacity: 0;
+        transform: translateY(-4rem);
+        transition: all 1s ease-out;
+      }
+      .image-animate.visible {
+        opacity: 1;
+        transform: translateY(1rem);
+        transform: translateX(-3rem);
+      }
+
+      /* Heading from left */
+      .heading-animate {
+        opacity: 0;
+        transform: translateX(20%);
+        transition: all 1s ease-out;
+      }
+      .heading-animate.visible {
+        opacity: 1;
+        transform: translateX(-40%);
+      }
+
+      /* Paragraph from right */
+      .para-animate {
+        opacity: 0;
+        transform: translateX(-10%);
+        transition: all 1s ease-out;
+      }
+      .para-animate.visible {
+        opacity: 1;
+        transform: translateX(3rem);
+      }
+
+      /* for body*/
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #fdfdfd;
+        color: #111;
+      }
+
+      .landing-section {
+        height: 100vh;
+
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .landing-heading {
+        position: absolute;
+        top: 2rem;
+        left: 50%;
+        /*transform: translateX(-50%);*/
+
+        font-size: 7rem;
+        font-weight: bold;
+
+        color: rgba(0, 0, 0, 0.195);
+        z-index: 1;
+        letter-spacing: 0.5rem;
+        text-transform: uppercase;
+      }
+
+      .content-wrapper {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 80%;
+      }
+
+      .image-section {
+        width: 50%;
+        height: 50vh;
+        display: flex;
+        align-items: center;
+
+        /*transform: translateX(-5rem);*/
+      }
+
+      .image-section img {
+        width: 100%;
+        height: auto;
+        border-radius: 1rem;
+        transition: 0.5s ease-in-out;
+      }
+
+      .text-section {
+        width: 50%;
+        padding-left: 2rem;
+        padding-bottom: 5rem;
+
+        /*transform: translateY(-2rem);*/
+      }
+
+      .text-section p {
+        font-size: 1.4rem;
+        margin-bottom: 2rem;
+      }
+
+      /* section 2*/
+      .section2 {
+        display: flex;
+        flex-direction: row;
+        gap: 3rem;
+        margin: 3rem;
+      }
+      .section2 p {
+        font-size: 0.7rem;
+        color: rgba(14, 13, 13, 0.708);
+      }
+      .section2 .para1 h3,
+      .section2 .para2 h3,
+      .section2 .para3 h3 {
+        padding: 2rem 2rem 0.5rem 2rem;
+        font-family: Arial, sans-serif !important;
+        font-weight: 500;
+        letter-spacing: 0.1rem;
+        text-transform: capitalize;
+        color: rgba(0, 0, 0, 0.651);
+      }
+
+      .para1 p,
+      .para2 p,
+      .para3 p {
+        padding: 0 2rem;
+      }
+
+      /* section3*/
+      .section3 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        margin-top: 3rem;
+      }
+      .section3 img {
+        width: 40%;
+      }
+
+      .section3 .backgroundText {
+        margin-top: 3rem;
+        opacity: 1;
+
+        position: absolute;
+        width: 200vh;
+        height: 120vh;
+
+        font-size: 7rem;
+        font-weight: bold;
+        letter-spacing: 0.5rem;
+        color: rgba(128, 128, 128, 0.312);
+        text-transform: uppercase;
+        text-align: center;
+        z-index: -1;
+      }
+
+      /* Footer */
+      .footer {
+        margin-bottom: 2rem;
+        text-align: center;
+        color: rgba(0, 0, 0, 0.55);
+      }
+      .footer a {
+        color: #56585aaa;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+      .footer a:hover {
+        color: #6a6e70;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="landing-section">
+      <h1 class="landing-heading heading-animate">Flawless Drip Energy</h1>
+
+      <div class="content-wrapper">
+        <div class="image-section image-animate">
+          <img src="./image/cascual_core/img2.png" alt="Fashion" />
+        </div>
+        <div class="text-section para-animate">
+          <p>
+            Discover elegance redefined. Our heritage wear blends tradition with
+            timeless charm — made to celebrate every moment.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="section2 scroll-animate">
+      <div class="para1">
+        <h3>
+          Redefine Your Everyday: Trendy Casuals That Feel As Good As They Look!
+        </h3>
+        <p>
+          Step into effortless style with our latest collection. Designed for
+          comfort, tailored for confidence – because your everyday wear should
+          never be ordinary.
+        </p>
+      </div>
+      <div class="para2">
+        <h3>
+          Where Street Style Meets Comfort: Casual Wear That Moves With You
+        </h3>
+        <p>
+          Our brand blends fashion-forward designs with ultra-soft fabrics to
+          keep you ahead in both comfort and style. Feel good, look better –
+          every single day.
+        </p>
+      </div>
+      <div class="para3">
+        <h3>Your Go-To Casuals: Inspired by Trends, Built for Comfort</h3>
+        <p>
+          From brunch to weekend getaways – discover casual wear that matches
+          your pace and personality. Because fashion should fit you, not the
+          other way around.
+        </p>
+      </div>
+    </div>
+
+    <div class="section3 scroll-animate">
+      <img id="mainImage" src="./image/cascual_core/img4.png" alt="Fashion" />
+      <div class="backgroundText">Edge Over Ordinary</div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>Discover more at <a href="./index.html">AERISCA Official</a></p>
+    </div>
+
+    <!--Script-->
+    <script>
+      //for the animation of the imags
+      const images = [
+        "./image/cascual_core/img3.png",
+        "./image/cascual_core/img4.png",
+        "./image/cascual_core/img5.png",
+        "./image/cascual_core/img6.png",
+      ];
+      let currentIndex = 0;
+      const mainImage = document.getElementById("mainImage");
+
+      function changeImage(src) {
+        mainImage.src = src;
+      }
+
+      //FOR THE CHANGING OF THE IMG
+
+      setInterval(() => {
+        currentIndex = (currentIndex + 1) % images.length;
+        mainImage.src = images[currentIndex];
+      }, 3000);
+
+      //fir animation of landing page for page loading
+
+      function showOnLoad() {
+        const elements = document.querySelectorAll(
+          " .image-animate, .heading-animate, .para-animate"
+        );
+
+        elements.forEach((el) => {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight - 100) {
+            el.classList.add("visible");
+          }
+        });
+      }
+
+      // Run animation when page loads
+      window.addEventListener("load", showOnLoad);
+
+      //for the animation of scrolling
+      window.addEventListener("scroll", () => {
+        const elements = document.querySelectorAll(".scroll-animate");
+
+        elements.forEach((el) => {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight - 100) {
+            el.classList.add("visible");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

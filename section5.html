@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Old Money</title>
+    <!--icon-->
+    <link rel="icon" href="./image/oldMoneyNew/icon.png" type="image/png" />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+      }
+      /* header section display*/
+      .header-section {
+        height: 100vh;
+        position: relative;
+      }
+      .header-section,
+      .img-section {
+        background-image: url("./image/oldMoneyNew/main_img.png");
+        background-size: cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+      }
+
+      /* for the old money text*/
+      .header-section h1 {
+        font-family: "Bodoni Moda SC", serif;
+        font-size: 8rem;
+        letter-spacing: 0.5rem;
+        font-weight: bold;
+
+        padding: 0.5rem 0rem 0rem 5.5rem;
+      }
+
+      /* for the scroll animaltions*/
+      .scroll-content {
+        opacity: 0;
+        transform: translateY(3.125rem);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+
+      .scroll-content.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* section 1 */
+      .main_page {
+        display: flex;
+        flex-direction: row;
+
+        height: 90vh;
+        margin: 2rem;
+
+        background-image: url(./image/oldMoneyNew/section1_img.png);
+        background-position: right 5% top 50%;
+        background-size: 90vh;
+        background-repeat: no-repeat;
+      }
+      .section1 {
+        display: flex;
+        flex-direction: column;
+      }
+      .section1 .para-section {
+        display: flex;
+        flex-direction: row;
+
+        width: 60%;
+      }
+      .section1 h1 {
+        font-size: 5rem;
+        font-family: "Bodoni Moda SC", serif;
+
+        margin-bottom: 2rem;
+      }
+      .section1 p,
+      .section1 em {
+        padding-left: 1rem;
+      }
+      .para1,
+      .para2,
+      .para3 {
+        margin-top: 3rem;
+        padding: 1rem;
+        text-align: start;
+        color: rgb(105, 103, 103);
+        font-family: "Bodoni Moda SC", serif;
+      }
+      /* section2  */
+      .second_page {
+        margin: 5rem 2rem;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+      }
+      .second_page .class-img img {
+        height: 40rem;
+        flex: 2;
+      }
+      .class-text {
+        display: flex;
+        flex-direction: column;
+
+        margin: 1rem;
+        width: 40%;
+        align-items: center;
+      }
+      .class-text h2 {
+        font-family: "Bodoni Moda SC", serif;
+        font-weight: bold;
+        font-size: 2.5rem;
+        margin-bottom: 2.5rem;
+      }
+      .class-text .text1,
+      .text2,
+      .text3,
+      .text4 {
+        padding: 1rem 0rem;
+        text-align: start;
+        color: rgb(105, 103, 103);
+        font-family: "Bodoni Moda SC", serif;
+      }
+      /* for the scroll animaltions for paragraph*/
+      .scroll-content-text {
+        opacity: 0;
+        transform: translateY(2rem);
+        transition: opacity 1s ease, transform 1s ease;
+      }
+
+      .scroll-content-text.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .scroll-content-img-right {
+        opacity: 0;
+        transform: translateX(-5rem);
+        transition: opacity 1s ease, transform 1s ease;
+      }
+      .scroll-content-img-right.visible {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      .scroll-content-img-left {
+        opacity: 0;
+        transform: translateX(5rem);
+        transition: opacity 1s ease, transform 1s ease;
+      }
+      .scroll-content-img-left.visible {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      /* section3 */
+
+      .magazine-collage {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        padding: 2rem;
+      }
+
+      .image {
+        position: absolute;
+        transition: transform 0.4s ease;
+        box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.2);
+      }
+
+      .image img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 0.25rem;
+      }
+
+      .img1 {
+        top: 5%;
+        left: 5%;
+        width: 14rem;
+      }
+
+      .img2 {
+        top: 10%;
+        left: 30%;
+        width: 15rem;
+      }
+
+      .img3 {
+        top: 10%;
+        right: 5%;
+        width: 14.5rem;
+      }
+
+      .img4 {
+        bottom: 10%;
+        left: 15%;
+        width: 13.75rem;
+      }
+
+      .img5 {
+        bottom: 2%;
+        right: 27%;
+        width: 15rem;
+      }
+
+      .img6 {
+        top: 5%;
+        left: 66%;
+        width: 9rem;
+      }
+      /* for the animation of the img*/
+      .scroll-img6 {
+        opacity: 0;
+        transform: translateY(-3rem);
+        transition: opacity 1s ease, transform 3s ease;
+      }
+      .scroll-img6.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .scroll-img4 {
+        opacity: 0;
+        transform: translateY(-5rem);
+        transition: opacity 1s ease, transform 3.5s ease;
+      }
+      .scroll-img4.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .scroll-img1 {
+        opacity: 0;
+        transform: translateY(-2rem);
+        transition: opacity 1s ease, transform 3s ease;
+      }
+      .scroll-img1.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .scroll-img2 {
+        opacity: 0;
+        transform: translateY(5rem);
+        transition: opacity 1s ease, transform 3s ease;
+      }
+      .scroll-img2.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .scroll-img5 {
+        opacity: 0;
+        transform: translateY(-2rem);
+        transition: opacity 1s ease, transform 3s ease;
+      }
+      .scroll-img5.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .scroll-img3 {
+        opacity: 0;
+        transform: translateY(2rem);
+        transition: opacity 1s ease, transform 3s ease;
+      }
+      .scroll-img3.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      /* Footer */
+      .footer {
+        margin-top: 3rem;
+        margin-bottom: 2rem;
+        text-align: center;
+        color: rgba(0, 0, 0, 0.55);
+      }
+      .footer a {
+        color: #505051;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+      .footer a:hover {
+        color: #6f707193;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="header-section">
+      <div class="scroll-content">
+        <h1>OLD MONEY</h1>
+      </div>
+    </div>
+    <!--the other body-->
+    <div class="main_page">
+      <div class="section1 scroll-content">
+        <h1>The Edit That Never Ages</h1>
+        <p>It was never about trends. It was always about taste.</p>
+        <em
+          >Fashion’s most elusive look didn’t return—it simply waited. In
+          silence. In silk. In the seams of something worn once <br />and worth
+          forever.</em
+        >
+        <div class="para-section">
+          <div class="para1 scroll-content">
+            They say style is cyclical, but the truth is, some things never
+            left. The old money aesthetic wasn’t designed to be noticed, it was
+            designed to last. It's in that perfectly lived-in trench coat, the
+            weight of real wool, the way a collar holds its shape after years.
+            It’s elegance without explanation—an unspoken dress code for those
+            who know better.
+          </div>
+          <div class="para2 scroll-content">
+            We believe your wardrobe already holds pieces worthy of revival.
+            That tweed jacket you almost gave away? The pearl-buttoned shirt
+            tucked in the back of your closet? They aren’t outdated—they’re
+            undiscovered assets. On our platform, fashion isn’t just bought.
+            It’s reclaimed, restyled, and revalued.
+          </div>
+          <div class="para3 scroll-content">
+            This isn’t just about fashion—it’s a shift in perspective. The art
+            of dressing well is less about what’s new and more about what’s
+            timeless. And when you realize your style is already richer than you
+            thought, you don’t need to chase trends—you curate legacy.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--second page-->
+    <section class="second_page">
+      <div class="class-img scroll-content-img-left">
+        <img src="./image/oldMoneyNew/dress1.png" alt="" />
+      </div>
+      <div class="class-text">
+        <div class="heading scroll-content">
+          <h2>
+            Old Money, New Energy, <br />
+            Timeless Fits Reimagined
+          </h2>
+        </div>
+        <div class="text1 scroll-content-text">
+          Old money style isn’t about trends — it’s a lifestyle. Think clean
+          cuts, neutral tones, and pieces that feel like they’ve been passed
+          down (but upgraded). Our brand brings that classic, quiet luxury look
+          and blends it with today’s edge. It’s preppy, polished, and
+          confidently minimal.
+        </div>
+        <div class="text2 scroll-content-text">
+          This fit pairs a crisp shirt with a tube top, tailored pants, and a
+          statement purse. It’s preppy layering with a twist — mixing structure
+          with ease. You get that "rich but lowkey" feel, like stepping out of
+          an old-money townhouse in 2025.
+        </div>
+        <div class="text3 scroll-content-text">
+          Here, we’re playing with power pieces — a button-up layered under a
+          corset, paired with sleek pants, heels, and a clean handbag. It’s bold
+          but subtle, sharp but chill. The kind of outfit that turns heads
+          without trying too hard.
+        </div>
+        <div class="text4 scroll-content-text">
+          Every piece in our collection is made to make you feel like you’ve
+          arrived — without saying a word. It’s for the girl who doesn’t need
+          logos to flex, just good taste. Whether you're styling it for brunch,
+          meetings, or just main character energy on the street — it's about
+          showing up like your last name’s on a building.
+        </div>
+      </div>
+      <div class="class-img scroll-content-img-right">
+        <img src="./image/oldMoneyNew/dress2.png" alt="" />
+      </div>
+    </section>
+
+    <!--Third PAGE-->
+
+    <section class="magazine-collage">
+      <div class="image img1 scroll-img1">
+        <img src="./image/oldMoneyNew/collage/img3.jpeg" alt="1" />
+      </div>
+      <div class="image img2 scroll-img2">
+        <img src="./image/oldMoneyNew/collage/img5.jpeg" alt="2" />
+      </div>
+      <div class="image img3 scroll-img3">
+        <img src="./image/oldMoneyNew/collage/img6.jpg" alt="3" />
+      </div>
+      <div class="image img4 scroll-img4">
+        <img src="./image/oldMoneyNew/collage/img1.jpeg" alt="4" />
+      </div>
+      <div class="image img5 scroll-img5">
+        <img src="./image/oldMoneyNew/collage/img4.jpeg" alt="5" />
+      </div>
+      <div class="image img6 scroll-img6">
+        <img src="./image/oldMoneyNew/collage/img2.jpeg" alt="6" />
+      </div>
+    </section>
+    <!-- Footer -->
+    <div class="footer">
+      <p>Discover more at <a href="./index.html">AERISCA Official</a></p>
+    </div>
+
+    <!--SCRIPT-->
+    <script>
+      //for the scroll animation
+      document.addEventListener("scroll", function () {
+        const text = document.querySelector(".fade-in");
+        const rect = text.getBoundingClientRect();
+
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          text.style.opacity = "1";
+        } else {
+          text.style.opacity = "0";
+        }
+      });
+      document.addEventListener("DOMContentLoaded", function () {
+        const elements = document.querySelectorAll(".scroll-content");
+        function checkScroll() {
+          elements.forEach((el) => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 100) {
+              el.classList.add("visible");
+            } else {
+              el.classList.remove("visible");
+            }
+          });
+        }
+
+        window.addEventListener("scroll", checkScroll);
+        checkScroll();
+      });
+
+      //for the paragraph text formation
+      document.addEventListener("scroll", function () {
+        const text = document.querySelector(".fade-in");
+        const rect = text.getBoundingClientRect();
+
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          text.style.opacity = "1";
+        } else {
+          text.style.opacity = "0";
+        }
+      });
+      //for the transition of different text
+      document.addEventListener("DOMContentLoaded", function () {
+        const classNames = [
+          ".scroll-content-text",
+          ".scroll-content-img-right",
+          ".scroll-content-img-left",
+          ".scroll-img1",
+          ".scroll-img2",
+          ".scroll-img3",
+          ".scroll-img4",
+          ".scroll-img5",
+          ".scroll-img6",
+        ];
+
+        function checkScroll() {
+          classNames.forEach((selector) => {
+            document.querySelectorAll(selector).forEach((el) => {
+              const rect = el.getBoundingClientRect();
+              if (rect.top < window.innerHeight - 100) {
+                el.classList.add("visible");
+              } else {
+                el.classList.remove("visible");
+              }
+            });
+          });
+        }
+
+        window.addEventListener("scroll", checkScroll);
+        checkScroll();
+      });
+    </script>
+  </body>
+</html>

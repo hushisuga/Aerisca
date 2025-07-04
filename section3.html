@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elegance core</title>
+    <!--icon-->
+    <link rel="icon" href="./image/kiss.png" />
+    <!--style-->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      /* for the scroll animaltions*/
+      .scroll-content {
+        opacity: 0;
+        transform: translateY(3.125rem);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+
+      .scroll-content.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      /* left */
+      .scroll-content-left {
+        opacity: 0;
+        transform: translateX(3rem);
+        transition: opacity 1.5s ease, transform 1.5s ease;
+      }
+
+      .scroll-content-left.visible {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      /* right*/
+      .scroll-content-right {
+        opacity: 0;
+        transform: translateX(-3rem);
+        transition: opacity 1.5s ease, transform 1.5s ease;
+      }
+
+      .scroll-content-right.visible {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      /* section1 */
+      /* color of heading grey: #DEDFE3 */
+      .section1 {
+        height: 100vh;
+        background-image: url(./image/elegant_core/back.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+
+        display: flex;
+        flex-direction: column;
+      }
+      /* heading */
+      .section1 .heading h1 {
+        text-align: center;
+        font-size: 4.5rem;
+        font-family: "Bodoni Moda SC", serif;
+        text-transform: uppercase;
+        letter-spacing: 0.5rem;
+        border: 1px solid black;
+
+        margin-top: 1rem;
+        color: #a21408;
+      }
+      .section1 .text {
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        font-family: "Bodoni Moda SC", serif;
+
+        color: #575757;
+      }
+      .section1 .text h4 {
+        font-size: 2rem;
+        color: #272727;
+        margin-bottom: 0.5rem;
+      }
+      .section1 .text .part1,
+      .section1 .text .part3 {
+        text-align: left;
+        position: absolute;
+        left: 5%;
+        width: 28%;
+      }
+
+      .section1 .text .part2,
+      .section1 .text .part4 {
+        text-align: right;
+        position: absolute;
+        right: 5%;
+        width: 28%;
+      }
+
+      .section1 .text .part1 {
+        top: 35%;
+      }
+      .section1 .text .part3 {
+        bottom: 10%;
+      }
+      .section1 .text .part2 {
+        top: 35%;
+      }
+      .section1 .text .part4 {
+        bottom: 10%;
+      }
+
+      /* section 2*/
+      .section2 {
+        margin-top: 1rem;
+        margin: 0 2rem 2rem 2rem;
+        padding: 0 3rem;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+
+        text-align: center;
+      }
+
+      .section2 p {
+        width: 50%;
+        margin-bottom: 1rem;
+        text-align: center;
+        padding: 1rem;
+      }
+
+      .section2 h1 {
+        font-family: "Bodoni Moda SC", serif;
+        text-transform: uppercase;
+        letter-spacing: 0.4rem;
+        font-size: 6.5rem;
+        margin-top: 1rem;
+      }
+      .section2 h1 span {
+        color: maroon;
+      }
+
+      .section2 em {
+        font-size: 1rem;
+        padding: 1rem 0;
+      }
+
+      /*section3*/
+      .section3 {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        justify-content: space-evenly;
+
+        margin-top: -30rem;
+        z-index: -2;
+      }
+
+      .section3 img {
+        height: 30rem;
+        z-index: -1;
+        position: absolute;
+      }
+
+      .section3 .img1 {
+        left: 5%;
+      }
+
+      .section3 .img2 {
+        right: 5%;
+      }
+
+      .sections-wrapper {
+        margin-bottom: 30rem;
+      }
+      /* Footer */
+      .footer {
+        margin-top: 3rem;
+        margin-bottom: 1rem;
+        text-align: center;
+        color: rgba(0, 0, 0, 0.55);
+      }
+      .footer a {
+        color: #505051;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+      .footer a:hover {
+        color: #6f707193;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="section1">
+      <div class="heading scroll-content">
+        <h1>Polished Threads</h1>
+      </div>
+      <div class="text">
+        <div class="part1 scroll-content-left">
+          <h4>Diva in Red</h4>
+          <p>
+            <em>It’s not just a dress, it’s a whole entrance.</em><br />For the
+            woman who commands every room, the red dress is her armor. Flowing
+            lines, fierce energy, and unapologetic power.
+          </p>
+        </div>
+        <div class="part2 scroll-content-right">
+          <h4>Born to Drape</h4>
+          <p>
+            <em>She doesn’t follow trends — she moves in art.</em><br />
+            Long dresses that glide like silk and speak louder than words. Every
+            step is grace, every glance is bold.
+          </p>
+        </div>
+        <div class="part3 scroll-content-left">
+          <h4>Femme & Fire</h4>
+          <p>
+            <em>Soft curves, strong presence.</em><br />
+            Where femininity meets fierce. These dresses hug, flare, and flow in
+            all the right ways.
+          </p>
+        </div>
+        <div class="part4 scroll-content-right">
+          <h4>Threads of Power</h4>
+          <p>
+            <em>Red lips, long dress, don’t test her.</em><br />
+            Diva energy lives in every thread. It’s the mix of classic
+            silhouettes with high-voltage confidence.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="sections-wrapper">
+      <div class="section2">
+        <h1 class="scroll-content">Paint the Town <span> Red</span></h1>
+        <em class="scroll-content">Where Passion Meets Precision.</em>
+        <p class="scroll-content">
+          Each piece in our collection is crafted to flatter, built to last, and
+          designed to conquer. Our signature red isn’t just bold — it’s
+          empowering. From rich scarlets to sultry crimsons, every dress tells a
+          story of grace with grit. You don’t just wear it — you own the room in
+          it.
+        </p>
+        <p class="scroll-content">
+          This isn’t fast fashion — it’s a wardrobe revolution. Our red isn’t a
+          trend; it’s a signature. It speaks of women who lead, who inspire, who
+          ignite. Slip into a dress that doesn’t just fit — it fuels your fire.
+        </p>
+
+        <p class="scroll-content">
+          This isn’t fast fashion — it’s a wardrobe revolution. Our red isn’t a
+          trend; it’s a signature. It speaks of women who lead, who inspire, who
+          ignite. Slip into a dress that doesn’t just fit — it fuels your fire.
+        </p>
+      </div>
+
+      <div class="section3">
+        <img
+          src="./image/elegant_core/img1.jpg"
+          alt=""
+          class="img1 scroll-content-left"
+        />
+        <img
+          src="./image/elegant_core/img2.jpg"
+          alt=""
+          class="img2 scroll-content-right"
+        />
+      </div>
+    </div>
+    <!-- Footer -->
+    <div class="footer">
+      <p>Discover more at <a href="./index.html">AERISCA Official</a></p>
+    </div>
+    <!--script-->
+    <script>
+      //for the transition of different text
+      document.addEventListener("DOMContentLoaded", function () {
+        const classNames = [
+          ".scroll-content",
+          ".scroll-content-right",
+          ".scroll-content-left",
+        ];
+
+        function checkScroll() {
+          classNames.forEach((selector) => {
+            document.querySelectorAll(selector).forEach((el) => {
+              const rect = el.getBoundingClientRect();
+              if (rect.top < window.innerHeight - 100) {
+                el.classList.add("visible");
+              } else {
+                el.classList.remove("visible");
+              }
+            });
+          });
+        }
+
+        window.addEventListener("scroll", checkScroll);
+        checkScroll();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Traditional</title>
+    <!--icon-->
+    <link
+      rel="icon"
+      href="./image/traiditional_core/icon.png"
+      type="image/png"
+    />
+    <!--STYLE-->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .main-section {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+      }
+      .background-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        z-index: -1;
+        display: flex;
+      }
+      .background-images {
+        display: flex;
+        /*width: 400vw;*/
+        height: 100vh;
+        background-size: cover;
+        background-position: bottom;
+
+        animation: scrollBackground 20s linear infinite;
+      }
+      .background-images div {
+        width: 40vw;
+        height: 100vh;
+        background-size: cover;
+        background-position: center;
+      }
+      @keyframes scrollBackground {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-200vw);
+        }
+      }
+      /* text section*/
+
+      .content {
+        position: absolute;
+        display: flex;
+
+        flex-direction: column;
+        justify-content: end;
+        /*align-items: end; */
+
+        height: 100vh;
+        width: 101%;
+        text-align: center;
+        padding: 1.25rem;
+
+        background: rgba(47, 46, 46, 0.414);
+        z-index: 1;
+
+        top: 0px;
+      }
+
+      .content h1 {
+        font-size: 5rem;
+        font-family: "Amarante", serif;
+        color: white;
+      }
+      .content p {
+        margin-bottom: 2rem;
+        color: white;
+        font-family: "Playfair Display", serif;
+        word-spacing: 0.5rem;
+        letter-spacing: 0.313rem;
+      }
+
+      /* for transitions*/
+      .fade-in {
+        opacity: 0;
+        transform: translateY(3.125rem);
+        animation: fadeInUp 1s ease-out forwards;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(3.125rem);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Scroll animation */
+      .scroll-content {
+        opacity: 0;
+        transform: translateY(3.125rem);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+
+      .scroll-content.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Image hover effect */
+      .image-hover {
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .image-hover:hover {
+        transform: scale(1.1);
+      }
+
+      /* img content */
+      .img-content img {
+        height: 20rem;
+        width: 20rem;
+        margin-right: 0.313rem;
+      }
+      .img-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        padding: 3rem;
+        margin: 1rem;
+      }
+
+      .para-between {
+        padding: 0 5rem;
+        font-weight: 100;
+        margin: 2rem;
+        text-align: center;
+      }
+      /* Footer */
+      .footer {
+        margin-bottom: 1rem;
+        text-align: center;
+        color: black;
+      }
+      .footer a {
+        color: #59050c;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+      .footer a:hover {
+        color: grey;
+      }
+    </style>
+  </head>
+  <body>
+    <!--main section with background animation-->
+    <div class="main-section">
+      <div class="background-container">
+        <div class="background-images"></div>
+      </div>
+    </div>
+    <div class="content">
+      <h1 class="fade-in">TIMELESS TRADITIONS</h1>
+      <p class="fade-in">Regal . Ethnic . Eternal</p>
+    </div>
+    <!-- text content -->
+    <h4 class="para-between">
+      A lehenga is a timeless blend of tradition and elegance, crafted to make
+      your special day shine. With seamless designs, intricate embroidery, and
+      flowing grace, each twirl reflects heritage and celebration, adding a
+      regal touch to every momen
+    </h4>
+    <div class="img-content scroll-content">
+      <img
+        src="./image/traiditional_core/section1.jpeg"
+        alt=""
+        class="image-hover"
+      />
+      <img
+        src="./image/traiditional_core/section2.jpeg"
+        alt=""
+        class="image-hover"
+      />
+
+      <img
+        src="./image/traiditional_core/section3.jpeg"
+        alt=""
+        class="image-hover"
+      />
+      <img
+        src="./image/traiditional_core/section4.jpeg"
+        alt=""
+        class="image-hover"
+      />
+    </div>
+    <!-- Footer -->
+    <div class="footer">
+      <p>Discover more at <a href="./index.html">AERISCA Official</a></p>
+    </div>
+    <!--SCRIPT-->
+    <script>
+      //for the animation of the background
+      document.addEventListener("DOMContentLoaded", function () {
+        const background = document.querySelector(".background-images");
+
+        const images = [
+          "./image/traiditional_core/img1.jpeg",
+          "./image/traiditional_core/img2.jpeg",
+          "./image/traiditional_core/img3.jpeg",
+          "./image/traiditional_core/img4.jpeg",
+          "./image/traiditional_core/img5.jpeg",
+          "./image/traiditional_core/img6.jpeg",
+          "./image/traiditional_core/img7.jpeg",
+
+          "./image/traiditional_core/img1.jpeg",
+          "./image/traiditional_core/img2.jpeg",
+        ];
+
+        images.forEach((img) => {
+          let div = document.createElement("div");
+          div.style.backgroundImage = `url(${img})`;
+          background.appendChild(div);
+        });
+      });
+      //for the scroll animation
+      document.addEventListener("scroll", function () {
+        const text = document.querySelector(".fade-in");
+        const rect = text.getBoundingClientRect();
+
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          text.style.opacity = "1";
+        } else {
+          text.style.opacity = "0";
+        }
+      });
+      document.addEventListener("DOMContentLoaded", function () {
+        const elements = document.querySelectorAll(".scroll-content");
+        function checkScroll() {
+          elements.forEach((el) => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 100) {
+              el.classList.add("visible");
+            } else {
+              el.classList.remove("visible");
+            }
+          });
+        }
+
+        window.addEventListener("scroll", checkScroll);
+        checkScroll();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AERISCA</title>
+    <link rel="stylesheet" href="./style.css" />
+    <!--icon-->
+    <link rel="icon" href="./image/butterfly.png" />
+    <!--link for font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="navbar">
+      <h2>AERISCA</h2>
+      <div class="nav-links">
+        <a href="#sectionOne">Collections</a>
+        <a href="#">Hot Drops</a>
+        <a href="./section7.html">Behind the Vibe</a>
+      </div>
+      <a href="./login.html" class="login-btn">Login</a>
+    </div>
+
+    <!-- Main Section -->
+    <div class="main-container">
+      <div class="card">
+        <h1 id="hero-text" class="bodoni-moda-sc-900">
+          What’s the vibe today? Dress it. Own it. Slay it.
+        </h1>
+        <!--middle-container-->
+        <div class="middle-container" id="sectionOne">
+          <div class="card-container">
+            <div class="img-card card1"></div>
+            <div class="text-card">
+              <a href="./section1.html">On-the-Go Looks</a>
+            </div>
+          </div>
+          <div class="card-container">
+            <div class="img-card card2"></div>
+            <div class="text-card">
+              <a href="./section2.html">Floralcore</a>
+            </div>
+          </div>
+          <div class="card-container">
+            <div class="img-card card3"></div>
+            <div class="text-card">
+              <a href="./section3.html">Effortless Elegance</a>
+            </div>
+          </div>
+        </div>
+
+        <!--middle-container-->
+        <div class="middle-container">
+          <div class="card-container">
+            <div class="img-card card4"></div>
+            <div class="text-card">
+              <a href="./section4.html">Timeless Traditions</a>
+            </div>
+          </div>
+          <div class="card-container">
+            <div class="img-card card5"></div>
+            <div class="text-card">
+              <a href="./section5.html">Old Money Chic </a>
+            </div>
+          </div>
+          <div class="card-container">
+            <div class="img-card card6"></div>
+            <div class="text-card">
+              <a href="./section6.html">The Corporate Slay</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>Discover more at <a href="./index.html">AERISCA Official</a></p>
+    </div>
+
+    <script>
+      // Smooth Hover Effect
+      document.querySelectorAll(".card").forEach((card) => {
+        card.addEventListener("mouseenter", () => {
+          card.style.boxShadow = "0 15px 30px #6A8FA6";
+        });
+        card.addEventListener("mouseleave", () => {
+          card.style.boxShadow = "0 10px 20px #6A8FA6";
+        });
+      });
+
+      const heroText = document.getElementById("hero-text");
+
+      const heroMessages = [
+        "Fit check? More like fit flex. Pick your drip now.",
+        "Style mood: Whatever makes ‘em stare. Choose yours.",
+        "One click, endless slays. What’s your look today?",
+        "New day, new slay. Build your fit, bestie!",
+        "Your wardrobe, your rules. What’s today’s aesthetic?",
+        "Be the main character. Choose your outfit now.",
+        "Trendsetter energy only. What’s your fashion flex?",
+        "Dressed to impress? Nah, dressed to express. Pick your vibe!",
+        "Your style, your power. What’s today’s statement piece?",
+      ];
+
+      let index = 0;
+
+      function changeHeroText() {
+        heroText.style.opacity = 0; // Fade out
+        setTimeout(() => {
+          heroText.textContent = heroMessages[index];
+          heroText.style.opacity = 1; // Fade in
+          index = (index + 1) % heroMessages.length; // Loop through messages
+        }, 500);
+      }
+
+      // Change text every 10 seconds
+      setInterval(changeHeroText, 6000);
+
+      //to change the hover section click
+      document.querySelectorAll("nav a").forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+      });
+    </script>
+  </body>
+</html>
