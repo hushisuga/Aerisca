@@ -47,16 +47,21 @@ This project was developed as part of a college design submission and is intende
 
 Video walkthrough and screenshots will be added below.
 
-<!-- Example section. Replace filenames with actual assets -->
-| Landing Page | Vibe Selection | Core Page Example |
-|--------------|----------------|-------------------|
-| ![Landing](screenshots/landing.png) | ![Selection](screenshots/vibes.png) | ![Core](screenshots/floral.png) |
 
-To add your screenshots, place them in a `screenshots/` folder in your repository and reference the files above.
+ ![cascualcore](Screenshots/11.png)
+ ---
+![floralCore](Screenshots/22.png)
+---
+![eleganceCpre](Screenshots/67.png)
+---
+![login](Screenshots/login.png)
+---
+![signUp](Screenshots/signUp.png)
+---
 
 ## Author
 
-Designed and developed by [Your Name Here]
+Designed and developed by Tripti Kumari
 
 For inquiries, collaboration, or feedback, feel free to reach out or open an issue in this repository.
 
