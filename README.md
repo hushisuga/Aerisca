@@ -45,7 +45,9 @@ This project was developed as part of a college design submission and is intende
 
 ## Screenshots and Demo
 
-Video walkthrough and screenshots will be added below.
+Video walkthrough and screenshots below.
+
+[WATCH DEMO](https://drive.google.com/file/d/1KwYjK72CcFqWGn0MEx1OK2de8hpPXyXL/view?usp=sharing)
 
 
  ![cascualcore](Screenshots/11.png)
